@@ -1,0 +1,398 @@
+/* @keyframes top-mid{
+    0% {
+        transform: rotateX(0deg);
+        z-index: 2;
+      }
+    0%, 99% {
+        opacity: 0.99;
+    }
+    100% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+}
+
+.tm{
+    animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
+    animation-fill-mode: both;
+    transform-origin: center bottom;
+}
+
+@keyframes mid-bottom{
+    0%{
+        opacity: 1;
+      }
+    100% {
+        transform: 
+        translateX(0) 
+        translateY(0) 
+        translateZ(0) 
+        rotateX(0deg) 
+        rotateY(0deg)
+        rotateZ(0deg);
+      
+      opacity: 1;
+    z-index: 5;
+    }
+}
+
+.mb{
+    animation: animate-bottom 250ms;
+    animation-delay: 250ms;
+}
+
+ */
+@-webkit-keyframes top-mid {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%, 99% {
+    opacity: 0.99;
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes top-mid {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%, 99% {
+    opacity: 0.99;
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+.tm {
+  -webkit-animation: top-mid 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+          animation: top-mid 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+@-webkit-keyframes mid-bottom {
+  0%, 50% {
+    z-index: -1;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+
+@keyframes mid-bottom {
+  0%, 50% {
+    z-index: -1;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+
+.mb {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: mid-bottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+          animation: mid-bottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Red Hat Text';
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #191a24;
+  background-image: url("/images/bg-stars.svg");
+  z-index: 1;
+}
+
+.header {
+  color: white;
+  text-align: center;
+  margin-top: 140px;
+  font-size: 18px;
+  letter-spacing: 9px;
+}
+
+.clock {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 
+
+    .top{
+        position: absolute;
+        background-color: #2c2c44;
+        height: 71px;
+        width: 148px;
+        border-radius: 9px 9px 0px 0px;
+        color: $softRed;
+    }
+
+    .top::before{
+        content: attr(data-number);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bottom{
+        position: absolute;
+        background-color: #34364f;
+        height: 71px;
+        width: 148px;
+        border-radius: 0px 0px 9px 9px;
+        color: $softRed;
+        box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
+        bottom: 0;
+    } 
+
+    .bottom::after{
+        content: attr(data-number);
+        position: relative;
+        top: -30px;
+        overflow: hidden;
+    }   */
+  /* 
+    .number div::before{
+        height: 70px;
+        overflow: hidden;
+        border-bottom: 1px solid #686868;
+        border-radius: 9px 9px 0px 0px;
+        background-color: #2c2c44;
+        line-height: 1.52em;
+    }
+
+    .number div::after{
+        height: 70px;
+        overflow: hidden;
+        border-top: 1px solid #686868;
+        border-radius: 0px 0px 9px 9px;
+        background-color: #34364f;
+        line-height: 0;
+    }
+
+    .flipt .top::before{
+        animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
+        animation-fill-mode: both;
+        transform-origin: center bottom; 
+    }
+
+    .flipb .bottom::after{
+        transform-origin: center top;
+        animation-fill-mode: both;
+        animation: mid-bottom 0.6s cubic-bezier(.15,.45,.28,1); 
+    }
+
+    .top{
+        z-index: 2;
+    }
+
+    .bottom{
+        z-index: 1;
+    }  */
+  /* 
+    .top{
+        position: absolute;
+        background-color: #2c2c44;
+        height: 71px;
+        width: 148px;
+        border-radius: 9px 9px 0px 0px;
+    }
+
+    .top::after{
+        content: '';
+        background-color: #2c2c44;
+        height: 71px;
+        width: 148px;
+        border-bottom: 1px solid #686868;
+    }
+
+    .bottom{
+        position: absolute;
+        background-color: #34364f;
+        height: 71px;
+        width: 148px;
+        border-radius: 0px 0px 9px 9px;
+        box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
+        bottom: 0;
+        
+    }
+
+    .bottom::after{
+        content: '';
+        border-top: 1px solid #686868;
+    }
+
+    .semicircle1{
+        position: absolute;
+        height: 12px;
+        width: 7px;
+        background-color: black;
+        border-radius: 0px 150px 150px 0;
+        z-index: 3;
+        bottom: 47%;
+    }
+    .semicircle2{
+        position: absolute;
+        height: 12px;
+        width: 7px;
+        background-color: black;
+        border-radius: 150px 0 0 150px;
+        z-index: 3;
+        right: 0;
+        bottom: 47%;
+    } 
+ */
+}
+
+.clock .container {
+  max-width: 688px;
+  padding-top: 111px;
+  padding-bottom: 111px;
+  margin: 0 auto;
+}
+
+.clock .clockgrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.clock .number {
+  position: relative;
+  height: 140px;
+  width: 148px;
+  font-size: 70px;
+}
+
+.clock .number div {
+  position: absolute;
+  text-align: center;
+  height: 140px;
+  width: 148px;
+  color: #fb6087;
+  -webkit-perspective: 7.14em;
+          perspective: 7.14em;
+}
+
+.clock .number div::before {
+  display: block;
+  content: attr(data-number);
+  height: 70px;
+  overflow: hidden;
+  background: #2c2c44;
+  border-radius: 9px 9px 0px 0px;
+  padding-top: 24px;
+  color: #d54e70;
+}
+
+.clock .number div::after {
+  content: attr(data-number);
+  display: block;
+  height: 70px;
+  overflow: hidden;
+  background: #34364f;
+  border-radius: 0px 0px 9px 9px;
+  -webkit-box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
+  line-height: 0;
+  color: #fb5d85;
+}
+
+.clock .semicircle1 {
+  position: absolute;
+  height: 12px;
+  width: 7px;
+  background-color: #141414;
+  border-radius: 0px 150px 150px 0;
+  z-index: 3;
+  bottom: 47%;
+}
+
+.clock .semicircle2 {
+  position: absolute;
+  height: 12px;
+  width: 7px;
+  background-color: #141414;
+  border-radius: 150px 0 0 150px;
+  z-index: 3;
+  right: 0;
+  bottom: 47%;
+}
+
+.background {
+  background-image: url("/images/pattern-hills.svg");
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 197px;
+}
+
+.background .social {
+  margin-left: 652px;
+  margin-top: 100px;
+}
+
+.background .social a:link {
+  text-decoration: none;
+}
+
+.background .social a:hover svg path {
+  fill: #fb6087;
+}
+
+.background .social a svg path {
+  -webkit-transition: fill 200ms ease-in-out;
+  transition: fill 200ms ease-in-out;
+}
+
+.background .social a:not(:last-child) {
+  margin-right: 31px;
+}
+/*# sourceMappingURL=style.css.map */
