@@ -1,22 +1,18 @@
 /* @keyframes top-mid{
     0% {
-        transform: rotateX(0deg);
-        z-index: 2;
-      }
-    0%, 99% {
-        opacity: 0.99;
+        background: #2c2c44;
     }
-    100% {
-        transform: rotateX(-90deg);
-        opacity: 0;
+    100%{
+        transform: 
+            translateX(0px) 
+            translateY(0.35em) 
+            translateZ(5px) 
+            rotateX(-90deg)
+            rotateY(0deg)
+            rotateZ(0deg);
     }
 }
 
-.tm{
-    animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
-    animation-fill-mode: both;
-    transform-origin: center bottom;
-}
 
 @keyframes mid-bottom{
     0%{
@@ -24,24 +20,18 @@
       }
     100% {
         transform: 
-        translateX(0) 
-        translateY(0) 
-        translateZ(0) 
-        rotateX(0deg) 
-        rotateY(0deg)
-        rotateZ(0deg);
-      
-      opacity: 1;
-    z-index: 5;
+            translateX(0) 
+            translateY(0) 
+            translateZ(0) 
+            rotateX(0deg) 
+            rotateY(0deg)
+            rotateZ(0deg);
+        opacity: 1;
     }
 }
-
-.mb{
-    animation: animate-bottom 250ms;
-    animation-delay: 250ms;
-}
-
  */
+
+ 
 
  @keyframes top-mid{
     0% {
@@ -61,7 +51,8 @@
     animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
     animation-fill-mode: both;
     transform-origin: center bottom; 
- }
+    animation-duration: 30s;
+ } 
 
  @keyframes mid-bottom{
     0%, 50% {
@@ -80,7 +71,8 @@
  }
 
  .mb{
-    transform-origin: center top;
-    animation-fill-mode: both;
     animation: mid-bottom 0.6s cubic-bezier(.15,.45,.28,1); 
- }
+    animation-fill-mode: both;
+    transform-origin: center top;
+    animation-duration: 30s;
+ } 

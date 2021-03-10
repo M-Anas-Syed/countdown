@@ -73,6 +73,27 @@
         right: 0;
         bottom: 47%;
     } 
+
+    .flip .top::before{
+        animation: top-mid 0.35s cubic-bezier(.37,.01,.94,.35);
+        animation-fill-mode: both;
+        transform-origin: center bottom; 
+    }
+
+    .flip .top::after{
+        
+        
+        transform-origin: center top;
+        animation-fill-mode: both;
+        animation: mid-bottom 0.7s cubic-bezier(.15,.45,.28,1); 
+    } 
+
+    .top{
+        z-index: 2;
+    }
+    .bottom{
+        z-index: 1;
+    }
 /* 
 
     .top{

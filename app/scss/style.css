@@ -1,22 +1,18 @@
 /* @keyframes top-mid{
     0% {
-        transform: rotateX(0deg);
-        z-index: 2;
-      }
-    0%, 99% {
-        opacity: 0.99;
+        background: #2c2c44;
     }
-    100% {
-        transform: rotateX(-90deg);
-        opacity: 0;
+    100%{
+        transform: 
+            translateX(0px) 
+            translateY(0.35em) 
+            translateZ(5px) 
+            rotateX(-90deg)
+            rotateY(0deg)
+            rotateZ(0deg);
     }
 }
 
-.tm{
-    animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
-    animation-fill-mode: both;
-    transform-origin: center bottom;
-}
 
 @keyframes mid-bottom{
     0%{
@@ -24,23 +20,15 @@
       }
     100% {
         transform: 
-        translateX(0) 
-        translateY(0) 
-        translateZ(0) 
-        rotateX(0deg) 
-        rotateY(0deg)
-        rotateZ(0deg);
-      
-      opacity: 1;
-    z-index: 5;
+            translateX(0) 
+            translateY(0) 
+            translateZ(0) 
+            rotateX(0deg) 
+            rotateY(0deg)
+            rotateZ(0deg);
+        opacity: 1;
     }
 }
-
-.mb{
-    animation: animate-bottom 250ms;
-    animation-delay: 250ms;
-}
-
  */
 @-webkit-keyframes top-mid {
   0% {
@@ -80,6 +68,8 @@
           animation-fill-mode: both;
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
 }
 
 @-webkit-keyframes mid-bottom {
@@ -119,12 +109,14 @@
 }
 
 .mb {
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation: mid-bottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
           animation: mid-bottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
 }
 
 html {
@@ -364,6 +356,32 @@ body {
   z-index: 3;
   right: 0;
   bottom: 47%;
+}
+
+.clock .flip .top::before {
+  -webkit-animation: top-mid 0.35s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+          animation: top-mid 0.35s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.clock .flip .top::after {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: mid-bottom 0.7s cubic-bezier(0.15, 0.45, 0.28, 1);
+          animation: mid-bottom 0.7s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+
+.clock .top {
+  z-index: 2;
+}
+
+.clock .bottom {
+  z-index: 1;
 }
 
 .background {
