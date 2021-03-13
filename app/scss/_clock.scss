@@ -4,14 +4,25 @@
     .container{
         max-width: 688px;
         padding-top: 111px;
-        padding-bottom: 111px;
+        padding-bottom: 165px;
         margin: 0 auto;
+
+        @include breakpoint-down(medium){
+            max-width: 327px;
+            padding-top: 60px;
+            padding-bottom: 167px;
+            margin: auto;
+        }
     }
 
     .clockgrid{
         display: grid;
         grid-template-columns: repeat(4,1fr);
         gap: 32px;
+
+        @include breakpoint-down(medium){
+            gap: 15px;
+        }
     }
 
     .number{
@@ -19,6 +30,12 @@
         height: 140px;
         width: 148px;
         font-size: 70px;
+
+        @include breakpoint-down(medium){
+            width: 70px;
+            height: 67px;
+            font-size: 27px;
+        }
         
     }
  
@@ -29,6 +46,11 @@
         width: 148px;
         color: $softRed;
         perspective: 7.14em;
+
+        @include breakpoint-down(medium){
+            width: 70px;
+            height: 67px;
+        }
     }
  
     .number div::before{
@@ -40,6 +62,11 @@
         border-radius: 9px 9px 0px 0px;
         padding-top: 24px;
         color: #d54e70;
+
+        @include breakpoint-down(medium){
+            height: 33px;
+            line-height: 0.7;
+        }
     }
 
     .number div::after{
@@ -52,6 +79,10 @@
         box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
         line-height: 0;
         color: #fb5d85;
+
+        @include breakpoint-down(medium){
+            height: 33px;
+        }
     } 
 
     .semicircle1{
@@ -62,6 +93,11 @@
         border-radius: 0px 150px 150px 0;
         z-index: 3;
         bottom: 47%;
+
+        @include breakpoint-down(medium){
+            height: 6px;
+            width: 3px;
+        }
     }
     .semicircle2{
         position: absolute;
@@ -72,6 +108,11 @@
         z-index: 3;
         right: 0;
         bottom: 47%;
+
+        @include breakpoint-down(medium){
+            height: 6px;
+            width: 3px;
+        }
     } 
 
     .flip .top::before{
@@ -94,130 +135,18 @@
     .bottom{
         z-index: 1;
     }
-/* 
 
-    .top{
-        position: absolute;
-        background-color: #2c2c44;
-        height: 71px;
-        width: 148px;
-        border-radius: 9px 9px 0px 0px;
-        color: $softRed;
+    p{
+        color: $grayishBlue;
+        font-family: 'Red Hat Text';
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 7px;
+        margin: 0;
+
+        @include breakpoint-down(medium){
+            font-size: 8px;
+            letter-spacing: 3px;
+        }
     }
-
-    .top::before{
-        content: attr(data-number);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .bottom{
-        position: absolute;
-        background-color: #34364f;
-        height: 71px;
-        width: 148px;
-        border-radius: 0px 0px 9px 9px;
-        color: $softRed;
-        box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
-        bottom: 0;
-    } 
-
-    .bottom::after{
-        content: attr(data-number);
-        position: relative;
-        top: -30px;
-        overflow: hidden;
-    }   */
-    
-/* 
-    .number div::before{
-        height: 70px;
-        overflow: hidden;
-        border-bottom: 1px solid #686868;
-        border-radius: 9px 9px 0px 0px;
-        background-color: #2c2c44;
-        line-height: 1.52em;
-    }
-
-    .number div::after{
-        height: 70px;
-        overflow: hidden;
-        border-top: 1px solid #686868;
-        border-radius: 0px 0px 9px 9px;
-        background-color: #34364f;
-        line-height: 0;
-    }
-
-    .flipt .top::before{
-        animation: top-mid 0.3s cubic-bezier(.37,.01,.94,.35);
-        animation-fill-mode: both;
-        transform-origin: center bottom; 
-    }
-
-    .flipb .bottom::after{
-        transform-origin: center top;
-        animation-fill-mode: both;
-        animation: mid-bottom 0.6s cubic-bezier(.15,.45,.28,1); 
-    }
-
-    .top{
-        z-index: 2;
-    }
-
-    .bottom{
-        z-index: 1;
-    }  */
-     /* 
-    .top{
-        position: absolute;
-        background-color: #2c2c44;
-        height: 71px;
-        width: 148px;
-        border-radius: 9px 9px 0px 0px;
-    }
-
-    .top::after{
-        content: '';
-        background-color: #2c2c44;
-        height: 71px;
-        width: 148px;
-        border-bottom: 1px solid #686868;
-    }
-
-    .bottom{
-        position: absolute;
-        background-color: #34364f;
-        height: 71px;
-        width: 148px;
-        border-radius: 0px 0px 9px 9px;
-        box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.15);
-        bottom: 0;
-        
-    }
-
-    .bottom::after{
-        content: '';
-        border-top: 1px solid #686868;
-    }
-
-    .semicircle1{
-        position: absolute;
-        height: 12px;
-        width: 7px;
-        background-color: black;
-        border-radius: 0px 150px 150px 0;
-        z-index: 3;
-        bottom: 47%;
-    }
-    .semicircle2{
-        position: absolute;
-        height: 12px;
-        width: 7px;
-        background-color: black;
-        border-radius: 150px 0 0 150px;
-        z-index: 3;
-        right: 0;
-        bottom: 47%;
-    } 
- */
 }

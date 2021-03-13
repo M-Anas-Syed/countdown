@@ -4,4 +4,10 @@
     margin-top: 140px;
     font-size: 18px;
     letter-spacing: 9px;
+
+    @include breakpoint-down(small){
+        font-size: 18px;
+        letter-spacing: 7px;
+        margin-top: 146px;
+    }
 }
