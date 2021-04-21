@@ -4,6 +4,7 @@
     bottom: 0;
     height: 197px;
     width: 100%;
+    min-width: 100vw;
 
     @include breakpoint-down(small){
         max-width: 375px;
