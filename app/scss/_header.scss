@@ -10,4 +10,8 @@
         letter-spacing: 7px;
         margin-top: 146px;
     }
+
+    @media (min-width: 376px) and (max-width: 639px){
+        font-size: 21px;
+    }
 }
